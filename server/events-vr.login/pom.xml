@@ -71,7 +71,7 @@
 
         <dependency>
             <groupId>com.events-vr.domain</groupId>
-            <artifactId>eventsvr.domain</artifactId>
+            <artifactId>events-vr.domain</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
