@@ -1,0 +1,382 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "",
+    "version": "1.0.0",
+    "title": "Swagger Search",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "apiteam@swagger.io"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "eventsvr.swagger.io",
+  "basePath": "/v2",
+  "tags": [
+    {
+      "name": "search",
+      "description": "search streams"
+    },
+    {
+      "name": "login",
+      "description": "login"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/registration": {
+      "post": {
+        "tags": [
+          "login"
+        ],
+        "summary": "Creating new user",
+        "description": "",
+        "operationId": "createUse",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "user credentials",
+            "schema": {
+              "properties": {
+                "name": {
+                  "description": "user login",
+                  "type": "string",
+                  "example": "vasya"
+                },
+                "password": {
+                  "description": "user password",
+                  "type": "string",
+                  "example": "vasya"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "timestamp": {
+                  "type": "integer",
+                  "format": "int64",
+                  "example": "151353177904"
+                },
+                "status": {
+                  "type": "string",
+                  "example": "OK"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "successful registration"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "invalid operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "timestamp": {
+                  "type": "integer",
+                  "format": "int64",
+                  "example": "151353177904"
+                },
+                "status": {
+                  "type": "string",
+                  "example": "FORBIDDEN"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "login already exists"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "login"
+        ],
+        "summary": "Login method",
+        "description": "",
+        "operationId": "login",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "user credentials",
+            "schema": {
+              "properties": {
+                "name": {
+                  "description": "user login",
+                  "type": "string",
+                  "example": "vasya"
+                },
+                "password": {
+                  "description": "user password",
+                  "type": "string",
+                  "example": "vasya"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "headers": {
+              "Authorization": {
+                "type": "string",
+                "description": "User token"
+              }
+            }
+          },
+          "401": {
+            "description": "Bad credentials",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "timestamp": {
+                  "type": "integer",
+                  "format": "int64",
+                  "example": "151353177904"
+                },
+                "status": {
+                  "type": "integer",
+                  "example": "401"
+                },
+                "error": {
+                  "type": "string",
+                  "example": "Unauthorized"
+                },
+                "message": {
+                  "type": "string",
+                  "example": "Authentication Failed: Bad credentials"
+                },
+                "path": {
+                  "type": "string",
+                  "example": "/path"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/autocomplete": {
+      "get": {
+        "tags": [
+          "search"
+        ],
+        "summary": "search",
+        "description": "",
+        "operationId": "search",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "name",
+            "description": "info to find",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "description": "number of page",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "size",
+            "description": "number of elements per page",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "user token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          },
+          "500": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/search": {
+      "get": {
+        "tags": [
+          "search"
+        ],
+        "summary": "find by stream type",
+        "description": "",
+        "operationId": "find",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "streamType",
+            "description": "value from enum",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "description": "number of page",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "size",
+            "description": "number of elements per page",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "user token",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/ApiResponse"
+            }
+          },
+          "500": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ApiResponse": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Stream"
+          }
+        },
+        "last": {
+          "type": "boolean",
+          "example": true
+        },
+        "totalElements": {
+          "type": "integer",
+          "example": 100
+        },
+        "totalPages": {
+          "type": "integer",
+          "example": 10
+        },
+        "numberOfElements": {
+          "type": "integer",
+          "example": 10
+        },
+        "sort": {
+          "type": "object"
+        },
+        "first": {
+          "type": "boolean",
+          "example": false
+        },
+        "size": {
+          "type": "integer",
+          "example": 10
+        },
+        "number": {
+          "type": "integer",
+          "example": 7
+        }
+      }
+    },
+    "Stream": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "vasya ebashit"
+        },
+        "thumbnail": {
+          "type": "string",
+          "example": "url"
+        },
+        "streamer": {
+          "type": "string",
+          "example": "petya"
+        },
+        "streamType": {
+          "type": "string",
+          "enum": [
+            "FOOTBALL",
+            "BASKETBALL"
+          ],
+          "example": "FOOTBALL"
+        },
+        "viewersCount": {
+          "type": "integer",
+          "example": 10234
+        }
+      }
+    }
+  }
+}
