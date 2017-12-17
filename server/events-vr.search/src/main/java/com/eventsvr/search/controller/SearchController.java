@@ -18,8 +18,8 @@ public class SearchController {
 
     @RequestMapping(value = "/autocomplete", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<Page<Stream>> autoComplete(@RequestParam String name,
-                                             @RequestParam int page,
-                                             @RequestParam int size) {
+                                                     @RequestParam int page,
+                                                     @RequestParam int size) {
         Pageable pageable = new PageRequest(page, size);
 
         Page<Stream> resultPage = streamService.find(name, pageable);
