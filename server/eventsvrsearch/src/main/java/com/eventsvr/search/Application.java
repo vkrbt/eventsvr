@@ -1,4 +1,4 @@
-package com.eventsvr.login;
+package com.eventsvr.search;
 
 import com.eventsvr.domain.service.UserService;
 import com.eventsvr.domain.service.impl.UserDetailsServiceImpl;

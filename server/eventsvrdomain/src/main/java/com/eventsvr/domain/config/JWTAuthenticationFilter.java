@@ -1,6 +1,6 @@
-package com.eventsvr.login.config;
+package com.eventsvr.domain.config;
 
-import com.eventsvr.login.user.EventsVrUser;
+import com.eventsvr.domain.user.EventsVrUser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

@@ -1,9 +1,8 @@
 package com.eventsvr.login.controller;
 
 import com.eventsvr.login.controller.dao.AuthResponse;
-import com.eventsvr.login.repository.UserRepository;
-import com.eventsvr.login.service.UserService;
-import com.eventsvr.login.user.EventsVrUser;
+import com.eventsvr.domain.service.UserService;
+import com.eventsvr.domain.user.EventsVrUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.eventsvr.login.config;
+package com.eventsvr.domain.config;
 
 import io.jsonwebtoken.Jwts;
 import org.springframework.security.authentication.AuthenticationManager;

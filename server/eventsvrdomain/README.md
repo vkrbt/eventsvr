@@ -1,0 +1,5 @@
+## Gettign started
+
+```
+mvn install
+```

@@ -1,4 +1,4 @@
-package com.eventsvr.login.user;
+package com.eventsvr.domain.user;
 
 import org.springframework.cassandra.core.PrimaryKeyType;
 import org.springframework.data.cassandra.mapping.PrimaryKeyColumn;

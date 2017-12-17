@@ -1,8 +1,9 @@
-package com.eventsvr.login.service.impl;
+package com.eventsvr.domain.service.impl;
 
-import com.eventsvr.login.service.UserService;
-import com.eventsvr.login.user.EventsVrUser;
+import com.eventsvr.domain.service.UserService;
+import com.eventsvr.domain.user.EventsVrUser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -10,7 +11,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {

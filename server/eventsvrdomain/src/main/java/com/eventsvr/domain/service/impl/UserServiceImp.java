@@ -1,10 +1,10 @@
-package com.eventsvr.login.service.impl;
+package com.eventsvr.domain.service.impl;
 
-import com.eventsvr.login.repository.UserRepository;
-import com.eventsvr.login.service.UserService;
-import com.eventsvr.login.user.EventsVrUser;
+import com.eventsvr.domain.repository.UserRepository;
+import com.eventsvr.domain.user.EventsVrUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.eventsvr.domain.service.UserService;
 
 @Service
 public class UserServiceImp implements UserService {

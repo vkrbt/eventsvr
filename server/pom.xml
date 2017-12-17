@@ -11,6 +11,7 @@
     <modules>
         <module>discover-server</module>
         <module>eventsvr-login</module>
+        <module>eventsvrdomain</module>
     </modules>
 
 </project>

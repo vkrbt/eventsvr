@@ -1,6 +1,6 @@
-package com.eventsvr.login.service;
+package com.eventsvr.domain.service;
 
-import com.eventsvr.login.user.EventsVrUser;
+import com.eventsvr.domain.user.EventsVrUser;
 
 public interface UserService {
     EventsVrUser findByLogin(String login);

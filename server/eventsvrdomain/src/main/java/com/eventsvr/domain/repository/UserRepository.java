@@ -1,6 +1,6 @@
-package com.eventsvr.login.repository;
+package com.eventsvr.domain.repository;
 
-import com.eventsvr.login.user.EventsVrUser;
+import com.eventsvr.domain.user.EventsVrUser;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

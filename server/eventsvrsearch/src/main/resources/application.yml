@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: search-microservice
+  data:
+    cassandra:
+      keyspace-name: eventsvr
+      contact-points: localhost
+      port: 9042
+
+    elasticsearch:
+      cluster-name: eventsvr
+      cluster-nodes: localhost:9300
+      properties:
+        http:
+          enabled:
+            true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka
+  instance:
+      leaseRenewalIntervalInSeconds: 10
+      leaseExpirationDurationInSeconds: 30
+
+server:
+  port: 3333
+
+#security:
+#  basic:
+#    enabled: false

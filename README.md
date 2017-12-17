@@ -2,50 +2,12 @@
 
 ## Getting started
 
-* Install [cassandra](http://cassandra.apache.org/download/)
+Visit all dirs in server dir in next order :
 
-* Start cassandra
+1. discoverserver
 
-```
-bash bin/cassandra
+2. eventsvrdomain
 
-```
+3. eventsvr-login
 
-* Open cqlsh
-
-```
-bash bin/sqlsh
-```
-
-* Create keyspace
-
-```
-CREATE KEYSPACE IF NOT EXISTS eventsvr WITH replication = {'class':'SimpleStrategy', 'replication_factor':1};
-
-```
-
-* Create table
-
-```
-CREATE TABLE IF NOT EXISTS eventvr.users ( id UUID, login varchar, password varchar, primary key(login))
-```
-
-* Move to server dir
-
-* Start microservices discover server
-
-```
-cd discover-server
-mvn spring-boot:run
-```
-
-* Start login service
-
-```
-cd eventsvr-login
-mvn spring-boot:run
-```
-
-## Login example
-
-[Simple login service work example](https://asciinema.org/a/a08yI0znBHdBgXNFNvRcyhrPG)
+4. eventsvr-search
