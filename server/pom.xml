@@ -10,8 +10,9 @@
 
     <modules>
         <module>discover-server</module>
-        <module>eventsvr-login</module>
-        <module>eventsvrdomain</module>
+        <module>events-vr.domain</module>
+        <module>events-vr.login</module>
+        <module>events-vr.search</module>
     </modules>
 
 </project>
