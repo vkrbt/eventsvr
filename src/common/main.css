@@ -1,0 +1,90 @@
+@import url("https://necolas.github.io/normalize.css/latest/normalize.css");
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css");
+
+.main-theme {
+  font-family: 'Helvetica';
+  font-size: 48px;
+  color: #ffffff;
+  background: url('../resources/background.jpg') no-repeat;
+  text-align: center;
+  height: 100vh;
+  background-size: cover;
+  padding-top: 150px;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.main-theme p {
+  font-size: 16px;
+  display: inline-block;
+  width: 90%;
+  padding-top: 10px;
+  border-top: 1px solid #ffffff;
+}
+
+.signup-page--container > .main-theme{
+  background-size: contain;
+}
+
+.home-page--container > .main-theme{
+  background-position: 30%;
+}
+
+.login-page--container > .main-theme{
+  height: 60vh;
+}
+
+.signup-page {
+  position: absolute;
+  bottom: 0;
+  height:60%;
+  width: 100%;
+  background-color: #313030;
+  padding: 60px 40px;
+}
+
+.form-control {
+  margin-bottom: 2vh;
+  height: 45px;
+}
+
+button {
+  margin-top: 10px;
+  width: 100%;
+  height: 45px;
+  display: inline-block;
+  background-color: #313030;
+  border: none;
+}
+
+.home-page--buttons {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.home-page--buttons button {
+  width: 50%;
+  display: inline-block;
+}
+
+.login-page {
+  position: absolute;
+  bottom: 0;
+  height: 40%;
+  width: 100%;
+  display: inline-block;
+  padding: 40px 40px;
+}
+
+.login-page button{
+  margin-top: 10px;
+  width: 100%;
+  height: 45px;
+  border: none;
+  color: white;
+}
+
