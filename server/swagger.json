@@ -49,7 +49,7 @@
             "name": "user credentials",
             "schema": {
               "properties": {
-                "name": {
+                "login": {
                   "description": "user login",
                   "type": "string",
                   "example": "vasya"
@@ -132,7 +132,7 @@
             "name": "user credentials",
             "schema": {
               "properties": {
-                "name": {
+                "login": {
                   "description": "user login",
                   "type": "string",
                   "example": "vasya"
