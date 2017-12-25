@@ -6,6 +6,7 @@
 
     <groupId>com.events-vr.master</groupId>
     <artifactId>events-vr</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <modules>
@@ -13,6 +14,7 @@
         <module>events-vr.domain</module>
         <module>events-vr.login</module>
         <module>events-vr.search</module>
+        <module>events-vr.stream</module>
     </modules>
 
 </project>

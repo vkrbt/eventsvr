@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: stream-microservice
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka
+  instance:
+      leaseRenewalIntervalInSeconds: 10
+      leaseExpirationDurationInSeconds: 30
+
+server:
+  port: 5555
+
+security:
+  basic:
+    enabled: false
