@@ -1,6 +1,11 @@
 spring:
   application:
     name: stream-microservice
+  data:
+    cassandra:
+      keyspace-name: eventsvr
+      contact-points: localhost
+      port: 9042
 
 eureka:
   client:
@@ -12,7 +17,3 @@ eureka:
 
 server:
   port: 5555
-
-security:
-  basic:
-    enabled: false
