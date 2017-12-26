@@ -8,7 +8,7 @@ export default class SearchPage extends React.Component {
     // const query = e.target.value;
   }
   render() {
-    const userName = 'katya';
+    const userName = JSON.parse(localStorage.userData).name;
     return (
       <div className="search-page--container">
         <div className="search-page--navbar">

@@ -1,6 +1,6 @@
 import React from 'react';
 import MainTheme from './MainTheme';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 export default class HomePage extends React.Component {
   render() {
@@ -10,10 +10,14 @@ export default class HomePage extends React.Component {
 
     return (
       <div className="home-page--container">
-        <MainTheme additionalInfo={additionalInfo} />
+        <MainTheme additionalInfo={additionalInfo}/>
         <div className="home-page--buttons">
-          <Link to='/signup'><button>SIGN UP</button></Link>
-          <Link to='/login'><button>LOG IN</button></Link>
+          <Link to='/signup'>
+            <button>SIGN UP</button>
+          </Link>
+          <Link to='/login'>
+            <button>LOG IN</button>
+          </Link>
         </div>
       </div>
     )
