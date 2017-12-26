@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 public class SearchController {
     private StreamService streamService;
 
-    @RequestMapping(value = "/autocomplete", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/search", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<Page<Stream>> autoComplete(@RequestParam String name,
                                                      @RequestParam int page,
                                                      @RequestParam int size) {
@@ -27,7 +27,7 @@ public class SearchController {
         return new ResponseEntity<>(new PageImpl<>(resultPage.getContent(), pageable, resultPage.getTotalElements()), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/search", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/filter", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<Page<Stream>> search(@RequestParam StreamType streamType,
                                                @RequestParam int page,
                                                @RequestParam int size) {
