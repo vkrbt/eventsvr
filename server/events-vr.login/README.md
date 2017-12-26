@@ -23,7 +23,8 @@ CREATE KEYSPACE IF NOT EXISTS eventsvr WITH replication = {'class':'SimpleStrate
 * Create table
 
 ```
-CREATE TABLE IF NOT EXISTS eventvr.users ( id UUID, login varchar, password varchar, primary key(login))
+CREATE TABLE IF NOT EXISTS eventsvr.users (id UUID, login varchar, password varchar, email varchar, primary key(id));
+CREATE INDEX login ON evnetsvr.users(login);
 ```
 
 * Move to server dir
