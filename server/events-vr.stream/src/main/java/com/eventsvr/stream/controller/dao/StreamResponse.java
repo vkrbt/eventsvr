@@ -23,6 +23,7 @@ public class StreamResponse {
     }
 
     public void setUrl(int id, int frame) {
-        this.url = id + "/" + frame + ".jpg";
-    }
+        this.url = "http://localhost:5555/" + "videos/" + id + "/" + frame + ".mp4";
+    } 
+
 }
