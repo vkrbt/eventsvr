@@ -10,7 +10,6 @@ public class StreamResponse {
 
     private String url;
 
-
     public HttpStatus getStatus() {
         return status;
     }
@@ -26,4 +25,5 @@ public class StreamResponse {
     public void setUrl(int id, int frame) {
         this.url = "http://localhost:5555/" + "videos/" + id + "/" + frame + ".mp4";
     } 
+
 }
