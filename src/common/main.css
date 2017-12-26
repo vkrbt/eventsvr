@@ -144,6 +144,12 @@ button {
 
 .login-page--container > .main-theme{
   height: 60vh;
+  min-height: 100%;
+}
+
+.search-page--results{
+  margin: 160px 0 0 0;
+  padding: 0 10px 40px 10px;
 }
 .login-page {
   height: 40vh;
@@ -154,7 +160,32 @@ button {
 
 /* LOGIN PAGE */
 
+.search-result--container{
+  position: relative;
+}
 
+.search-result--img{
+  width:20vh;
+  height:15vh;
+  float: left;
+}
 
+.panel-default>.panel-heading {
+  background-color: #333 !important;
+  color:white !important;
+}
 
+.checkbox-inline {
+  color: white !important;
+}
 
+.search-result--info{
+  padding-left: 15px;
+  text-align: center;
+}
+
+.search-result--counter{
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
