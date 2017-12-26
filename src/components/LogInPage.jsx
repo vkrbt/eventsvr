@@ -1,11 +1,11 @@
 import React from 'react';
 import { Form, FormControl } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import MainTheme from './MainTheme';
 
 export default class LoginPage extends React.Component {
-
   logIn() {
     axios.post('http://6cb1e3c0.ngrok.io/login', {
       "login": "katya",
@@ -27,7 +27,7 @@ export default class LoginPage extends React.Component {
             <FormControl type="text" placeholder="E-mail" />
             <FormControl type="text" placeholder="Password" />
           </Form>
-          <button onClick={this.logIn}>LOG IN</button>
+          <Link to='/search'><button onClick={this.logIn}>LOG IN</button></Link>
         </div>
       </div>
     )

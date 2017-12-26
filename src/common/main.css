@@ -88,3 +88,22 @@ button {
   color: white;
 }
 
+.signup-page--container{
+  position: relative;
+  min-height: 100%;
+  display:flex;
+}
+
+.signup-page--results{
+  padding-bottom: 40px;
+}
+
+.search-page--pagination {
+  position: absolute;
+  bottom: 10px;
+  height: 30px;
+  width: 65%;
+  left:50%;
+  margin-left: -32.5%;
+}
+
