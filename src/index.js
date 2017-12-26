@@ -8,6 +8,7 @@ import HomePage from './components/HomePage';
 import LoginPage from './components/LogInPage';
 import SignUpPage from './components/SignUpPage';
 import VirtualPage from "./components/VirtualPage";
+import TestRequests from "./components/TestRequests";
 
 ReactDOM.render((
     <BrowserRouter>
@@ -17,6 +18,7 @@ ReactDOM.render((
             <Route path='/signup' component={SignUpPage} />
             <Route path='/signup' component={SignUpPage} />
             <Route path='/virtual' component={VirtualPage} />
+          <Route path='/test' component={TestRequests} />
         </Switch>
     </BrowserRouter>
 ), document.getElementById('root'));
