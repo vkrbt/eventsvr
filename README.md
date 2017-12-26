@@ -11,3 +11,5 @@ Visit all dirs in server dir in next order :
 3. eventsvr-login
 
 4. eventsvr-search
+
+5. eventsvr-stream
