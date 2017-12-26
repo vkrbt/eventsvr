@@ -49,7 +49,7 @@
             "name": "user credentials",
             "schema": {
               "properties": {
-                "name": {
+                "login": {
                   "description": "user login",
                   "type": "string",
                   "example": "vasya"
@@ -132,7 +132,7 @@
             "name": "user credentials",
             "schema": {
               "properties": {
-                "name": {
+                "login": {
                   "description": "user login",
                   "type": "string",
                   "example": "vasya"
@@ -304,6 +304,49 @@
           }
         }
       }
+    },
+    "/stream": {
+      "get": {
+        "tags": [
+          "stream"
+        ],
+        "summary": "get frame by id and frame_num",
+        "description": "",
+        "operationId": "get",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "description": "id of stream",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "frame",
+            "description": "number of frame",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Url"
+            }
+          },
+          "500": {
+            "description": "Invalid input"
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -377,6 +420,19 @@
           "example": 10234
         }
       }
+    },
+    "Url" : {
+    	"type" : "object",
+    	"properties": {
+        "url": {
+          "type": "string",
+          "example": "http://localhost:5555/1/2.jpg"
+        },
+        "status": {
+          "type": "string",
+          "example": "OK"
+      }
     }
   }
+}
 }
