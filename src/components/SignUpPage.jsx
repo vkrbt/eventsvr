@@ -38,7 +38,7 @@ export default class LoginPage extends React.Component {
   }
 
   signUp() {
-    axios.post('http://cfd06e2f.ngrok.io/registration', {
+    axios.post('http://96bd434f.ngrok.io/registration', {
       "login": this.state.name,
       "e-mail": this.state.email,
       "password": this.state.password

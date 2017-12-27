@@ -35,7 +35,7 @@ export default class LoginPage extends React.Component {
   }
 
   logIn() {
-    axios.post('http://cfd06e2f.ngrok.io/login', {
+    axios.post('http://96bd434f.ngrok.io/login', {
       "login": this.state.name,
       "password": this.state.password
     })

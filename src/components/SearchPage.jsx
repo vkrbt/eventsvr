@@ -33,10 +33,11 @@ export default class SearchPage extends React.Component {
     this.state = this.defaultState;
   }
 
-  onBlur = (e) => {
+  onKeyDown = (e) => {
     const query = e.target.value;
     if (query) {
-      axios.get(`http://c2b561cc.ngrok.io/search?name=${query}&page=0&size=10`)
+      axios.get(`http://10c24089.ngrok.io/search?&name=${query}&page=0&size=10`,
+        {headers: {'Authorization': JSON.parse(localStorage.userData).token}})
         .then((response) => {
           this.saveResults(response.data.content, `Results for '${query}'`);
         })
@@ -62,7 +63,8 @@ export default class SearchPage extends React.Component {
     const title = e.target.name === 'FOOTBALL' ? 'Top footballs streams' : 'Top basketball streams';
 
     if (e.target.checked && streamType !== 'ALL') {
-      axios.get(`http://c2b561cc.ngrok.io/filter?streamType=${streamType}&page=0&size=19`)
+      axios.get(`http://10c24089.ngrok.io/filter?streamType=${streamType}&page=0&size=19`,
+        {headers: {'Authorization': JSON.parse(localStorage.userData).token}})
         .then((response) => {
           this.saveResults(response.data.content, title)
         })
